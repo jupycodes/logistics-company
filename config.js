@@ -8,10 +8,6 @@ if(environment === "production") {
 } 
 
 const Sequelize = require('sequelize');
-const config = new Sequelize(
-    database,
-    username,
-    password, 
-    {dialect: 'mysql'});
+const config = new Sequelize( database, username, password, {dialect: 'mysql', host: host});
 
 module.exports = config;
