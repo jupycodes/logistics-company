@@ -97,7 +97,7 @@
         function deleteItem(){
             var itemId = document.getElementById("itemId").value;
             const http = new XMLHttpRequest()
-            http.open("DELETE", `http://localhost:3000/${itemId}`)
+            http.open("DELETE", `https://shopify-logistics-123.herokuapp.com/${itemId}`)
             http.send()
             alert(`Item ${itemId} successfully deleted`)
         }
@@ -105,7 +105,7 @@
             var itemId = document.getElementById("itemId").value;
             document.getElementById("editForm").hidden = false;
             document.getElementById("editForm").setAttribute("method", "POST");
-            document.getElementById("editForm").setAttribute("action", `http://localhost:3000/items/${itemId}`);
+            document.getElementById("editForm").setAttribute("action", `https://shopify-logistics-123.herokuapp.com/items/${itemId}`);
         }
         function showAlert(type){
             alert(`Item was successfully modified.`)
@@ -113,7 +113,7 @@
         window.onload = function loadLocations() {
             let dropdown = document.getElementById('locationId');
                 const http = new XMLHttpRequest()
-                http.open("GET", "http://localhost:3000/locations")
+                http.open("GET", "https://shopify-logistics-123.herokuapp.com/locations")
                 http.send()
                 http.onload = () => {
                     var jsonData = JSON.parse(http.responseText)
