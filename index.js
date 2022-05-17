@@ -103,7 +103,7 @@ app.delete('/:itemId', function(req,res){
     Item.findByPk(itemId).then(function(result){
         if(result){
             result.destroy().then(function(){
-                res.send(result);
+                res.redirect(req.get('referer'));
             }).catch(function(err){
                 res.send(err);
             });
